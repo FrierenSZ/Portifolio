@@ -86,19 +86,22 @@
                 <div class="skill">
                     <span>HTML</span>
                     <div class="skill-bar">
-                        <div class="skill-fill" style="width: 90%;"></div>
+                        <div class="skill-fill" style="width: 50%;"></div>
+                        <span class="skill-percentage">50%</span>
                     </div>
                 </div>
                 <div class="skill">
                     <span>CSS</span>
                     <div class="skill-bar">
-                        <div class="skill-fill" style="width: 85%;"></div>
+                        <div class="skill-fill" style="width: 50%;"></div>
+                        <span class="skill-percentage">50%</span>
                     </div>
                 </div>
                 <div class="skill">
                     <span>JavaScript</span>
                     <div class="skill-bar">
-                        <div class="skill-fill" style="width: 80%;"></div>
+                        <div class="skill-fill" style="width: 25%;"></div>
+                        <span class="skill-percentage">25%</span>
                     </div>
                 </div>
             </div>
@@ -107,19 +110,22 @@
                 <div class="skill">
                     <span>Node.js</span>
                     <div class="skill-bar">
-                        <div class="skill-fill" style="width: 75%;"></div>
+                        <div class="skill-fill" style="width: 25%;"></div>
+                        <span class="skill-percentage">25%</span>
                     </div>
                 </div>
                 <div class="skill">
                     <span>Python</span>
                     <div class="skill-bar">
-                        <div class="skill-fill" style="width: 70%;"></div>
+                        <div class="skill-fill" style="width: 20%;"></div>
+                        <span class="skill-percentage">20%</span>
                     </div>
                 </div>
                 <div class="skill">
                     <span>SQL</span>
                     <div class="skill-bar">
-                        <div class="skill-fill" style="width: 65%;"></div>
+                        <div class="skill-fill" style="width: 20%;"></div>
+                        <span class="skill-percentage">20%</span>
                     </div>
                 </div>
             </div>
@@ -208,7 +214,7 @@
     </section>
 
     <script>
-        // Language translations
+        
         const translations = {
             pt: {
                 home: "Início",
@@ -371,13 +377,13 @@
             document.querySelectorAll('.contact-box h3')[1].textContent = translations[lang].email;
             document.querySelectorAll('.contact-box h3')[2].textContent = translations[lang].location;
 
-            // Update words for typing animation
+            
             words = lang === 'pt' ? ['Desenvolvedor Web ', 'Desenvolvedor ', 'Web Designer '] : ['Web Developer ', 'Developer ', 'Web Designer '];
 
-            // Update typingSpan reference after changing the DOM
+            
             typingSpan = document.querySelector('.typing-text span');
 
-            // Restart typing animation
+            
             clearTimeout(typeWriterTimeout);
             wordIndex = 0;
             charIndex = 0;
@@ -424,7 +430,7 @@
             nav.classList.toggle('active');
         });
 
-        // Active link highlighting on scroll
+        
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('nav a');
 
