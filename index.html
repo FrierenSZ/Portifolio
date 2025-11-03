@@ -46,7 +46,7 @@
                 <a href="https://github.com/FrierenSZ" target="_blank"><i class="fa-brands fa-github"></i></a>
                 <a href="https://www.instagram.com/thundergirando" target="_blank"><i class="fa-brands fa-instagram"></i></a>
             </div>
-            <a href="#about" class="btn">About me</a>
+            <a href="#about" class="btn">Sobre mim</a>
         </div>
     </section>
 
@@ -339,7 +339,7 @@
             document.querySelector('.home-content h1').innerHTML = translations[lang].greeting;
             document.querySelector('.home-content h3').innerHTML = translations[lang].profession;
             document.querySelector('.home-content p').textContent = translations[lang].description;
-            document.querySelector('a[href="#about"]').textContent = translations[lang].aboutBtn;
+            document.querySelector('a.btn[href="#about"]').textContent = translations[lang].aboutBtn;
             document.querySelector('a[href="certificados/curriculo.pdf"]').textContent = translations[lang].downloadCV;
             document.querySelector('#about .heading').innerHTML = translations[lang].aboutTitle;
             document.querySelectorAll('.about-content p')[0].textContent = translations[lang].aboutContent1;
