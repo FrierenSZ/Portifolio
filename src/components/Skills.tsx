@@ -27,6 +27,7 @@ const skillCategories = [
       { name: "Antigravity", icon: "/images/antigravity-logo.png" },
       { name: "Supabase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" },
       { name: "Lovable", icon: "https://lovable.dev/favicon.ico" },
+      { name: "MCP", icon: "https://modelcontextprotocol.io/favicon.ico" },
     ],
   },
   {
@@ -36,6 +37,7 @@ const skillCategories = [
       { name: "Chatbots IA", emoji: "🤖" },
       { name: "CRM + IA", emoji: "🔗" },
       { name: "Pipedrive", icon: "https://cdn.brandfetch.io/idZG_U1qqs/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B" },
+      { name: "Monday", icon: "https://cdn.brandfetch.io/ideoam_mDi/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B" },
     ],
   },
 ];
