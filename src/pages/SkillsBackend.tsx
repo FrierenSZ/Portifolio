@@ -7,6 +7,7 @@ import CustomCursor from "../components/CustomCursor";
 import AnimatedSection from "../components/AnimatedSection";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const skills = [
   { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
@@ -69,8 +70,8 @@ export default function SkillsBackend() {
             ))}
           </div>
           <AnimatedSection className="flex justify-center gap-4 mt-16">
-            <a href="/skills/frontend" className="px-6 py-3 rounded-full border border-foreground/10 text-muted hover:text-foreground hover:border-foreground/30 transition-all text-sm font-mono">← Frontend</a>
-            <a href="/skills/automacao" className="px-6 py-3 rounded-full bg-accent/10 border border-accent/30 text-accent hover:bg-accent/20 transition-all text-sm font-mono">Automação & IA →</a>
+            <Link to="/skills/frontend" className="px-6 py-3 rounded-full border border-foreground/10 text-muted hover:text-foreground hover:border-foreground/30 transition-all text-sm font-mono">← Frontend</Link>
+            <Link to="/skills/automacao" className="px-6 py-3 rounded-full bg-accent/10 border border-accent/30 text-accent hover:bg-accent/20 transition-all text-sm font-mono">Automação & IA →</Link>
           </AnimatedSection>
         </div>
       </section>
