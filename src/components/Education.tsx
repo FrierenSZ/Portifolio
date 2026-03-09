@@ -9,9 +9,14 @@ const education = [
 ];
 
 const experience = [
-  { title: "Desenvolvedor Freelancer", desc: "Soluções para Empresas — Full-stack, automações n8n, chatbots com IA e integrações CRM. Início como freelancer em 18/01/2026.", period: "Jan 2026 - Freelancer/Atual" },
-  { title: "Bot Developer", desc: "Desenvolvimento de bots e automações independentes", period: "2024 - Freelancer" },
-  { title: "Web Developer", desc: "Projetos independentes — Sites para clientes como Reis Representações", period: "2024 - Freelancer" },
+  {
+    company: "Freelancer",
+    roles: [
+      { title: "Desenvolvedor Freelancer", desc: "Soluções para Empresas — Full-stack, automações n8n, chatbots com IA e integrações CRM.", period: "Jan 2026 - Atual" },
+      { title: "Bot Developer", desc: "Desenvolvimento de bots e automações independentes", period: "2024 - 2025" },
+      { title: "Web Developer", desc: "Projetos independentes — Sites para clientes como Reis Representações", period: "2024" },
+    ],
+  },
 ];
 
 export default function Education() {
