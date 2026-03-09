@@ -27,6 +27,7 @@ const skillCategories = [
       { name: "Antigravity", icon: "/images/antigravity-logo.png" },
       { name: "Supabase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" },
       { name: "Lovable", icon: "https://lovable.dev/favicon.ico" },
+      { name: "MCP", icon: "https://modelcontextprotocol.io/favicon.ico" },
     ],
   },
   {
