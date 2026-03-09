@@ -1,4 +1,5 @@
 import AnimatedSection from "./AnimatedSection";
+import { Link } from "react-router-dom";
 
 const education = [
   { title: "Ensino Médio Completo", place: "Concluído", year: "2024" },
@@ -8,15 +9,8 @@ const education = [
   { title: "Preparação para o Trabalho", place: "Vocação", year: "2024", cert: "/certificados/CERTIFICADO - PPT.pdf" },
 ];
 
-const experience = [
-  {
-    company: "Freelancer",
-    roles: [
-      { title: "Desenvolvedor Freelancer", desc: "Soluções para Empresas — Full-stack, automações n8n, chatbots com IA e integrações CRM.", period: "Jan 2026 - Atual" },
-      { title: "Bot Developer", desc: "Desenvolvimento de bots e automações independentes", period: "2024 - 2025" },
-      { title: "Web Developer", desc: "Projetos independentes — Sites para clientes como Reis Representações", period: "2024" },
-    ],
-  },
+const experiencePreview = [
+  { company: "Freelancer", current: "Desenvolvedor Freelancer", since: "Jan 2026" },
 ];
 
 export default function Education() {
@@ -56,7 +50,7 @@ export default function Education() {
       </section>
 
       <section id="experience" className="relative py-32 px-6 bg-background-alt">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <AnimatedSection className="text-center mb-16">
             <p className="text-accent font-mono text-sm tracking-widest uppercase mb-4">Trajetória</p>
             <h2 className="font-display text-4xl md:text-5xl font-bold">
@@ -64,24 +58,21 @@ export default function Education() {
             </h2>
           </AnimatedSection>
 
-          <div className="max-w-3xl mx-auto">
-            {experience.map((exp, i) => (
-              <AnimatedSection key={exp.company} delay={i * 0.15}>
-                <div className="mb-10">
-                  <h3 className="font-display text-2xl font-bold mb-6 text-accent">{exp.company}</h3>
-                  <div className="relative border-l-2 border-accent/30 pl-8 space-y-8">
-                    {exp.roles.map((role, j) => (
-                      <AnimatedSection key={role.title} delay={i * 0.15 + j * 0.1}>
-                        <div className="relative">
-                          <div className="absolute -left-[2.55rem] top-1.5 w-4 h-4 rounded-full bg-accent border-4 border-background" />
-                          <span className="font-mono text-xs text-accent">{role.period}</span>
-                          <h4 className="font-display text-lg font-bold mt-1">{role.title}</h4>
-                          <p className="text-muted text-sm mt-1">{role.desc}</p>
-                        </div>
-                      </AnimatedSection>
-                    ))}
-                  </div>
-                </div>
+          <div className="grid sm:grid-cols-1 gap-6 max-w-md mx-auto">
+            {experiencePreview.map((exp, i) => (
+              <AnimatedSection key={exp.company} delay={i * 0.12}>
+                <Link
+                  to="/experience"
+                  className="group block p-8 rounded-2xl border border-foreground/5 bg-background hover:border-accent/30 hover:bg-accent/5 transition-all duration-300"
+                >
+                  <h3 className="font-display text-xl font-bold mb-2 flex items-center gap-3">
+                    <span className="w-2 h-2 bg-accent rounded-full group-hover:scale-125 transition-transform" />
+                    {exp.company}
+                  </h3>
+                  <p className="text-muted text-sm mb-1">{exp.current}</p>
+                  <p className="text-muted/60 text-xs font-mono mb-4">Desde {exp.since}</p>
+                  <span className="text-accent font-mono text-sm group-hover:underline">Ver timeline completa →</span>
+                </Link>
               </AnimatedSection>
             ))}
           </div>
