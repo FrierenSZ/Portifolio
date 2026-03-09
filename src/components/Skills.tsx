@@ -37,6 +37,7 @@ const skillCategories = [
       { name: "Chatbots IA", emoji: "🤖" },
       { name: "CRM + IA", emoji: "🔗" },
       { name: "Pipedrive", icon: "https://cdn.brandfetch.io/idZG_U1qqs/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B" },
+      { name: "Monday", icon: "https://cdn.brandfetch.io/ideoam_mDi/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B" },
     ],
   },
 ];
