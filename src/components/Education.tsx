@@ -9,9 +9,14 @@ const education = [
 ];
 
 const experience = [
-  { title: "Desenvolvedor Freelancer", desc: "Soluções para Empresas — Full-stack, automações n8n, chatbots com IA e integrações CRM. Início como freelancer em 18/01/2026.", period: "Jan 2026 - Freelancer/Atual" },
-  { title: "Bot Developer", desc: "Desenvolvimento de bots e automações independentes", period: "2024 - Freelancer" },
-  { title: "Web Developer", desc: "Projetos independentes — Sites para clientes como Reis Representações", period: "2024 - Freelancer" },
+  {
+    company: "Freelancer",
+    roles: [
+      { title: "Desenvolvedor Freelancer", desc: "Soluções para Empresas — Full-stack, automações n8n, chatbots com IA e integrações CRM.", period: "Jan 2026 - Atual" },
+      { title: "Bot Developer", desc: "Desenvolvimento de bots e automações independentes", period: "2024 - 2025" },
+      { title: "Web Developer", desc: "Projetos independentes — Sites para clientes como Reis Representações", period: "2024" },
+    ],
+  },
 ];
 
 export default function Education() {
@@ -59,13 +64,23 @@ export default function Education() {
             </h2>
           </AnimatedSection>
 
-          <div className="grid sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {experience.map((e, i) => (
-              <AnimatedSection key={e.title} delay={i * 0.15}>
-                <div className="p-6 rounded-2xl border border-foreground/5 bg-background hover:border-accent/30 transition-all duration-300 hover:-translate-y-1 h-full">
-                  <h3 className="font-display text-xl font-bold mb-2">{e.title}</h3>
-                  <p className="text-muted text-sm mb-3">{e.desc}</p>
-                  <span className="font-mono text-xs text-accent">{e.period}</span>
+          <div className="max-w-3xl mx-auto">
+            {experience.map((exp, i) => (
+              <AnimatedSection key={exp.company} delay={i * 0.15}>
+                <div className="mb-10">
+                  <h3 className="font-display text-2xl font-bold mb-6 text-accent">{exp.company}</h3>
+                  <div className="relative border-l-2 border-accent/30 pl-8 space-y-8">
+                    {exp.roles.map((role, j) => (
+                      <AnimatedSection key={role.title} delay={i * 0.15 + j * 0.1}>
+                        <div className="relative">
+                          <div className="absolute -left-[2.55rem] top-1.5 w-4 h-4 rounded-full bg-accent border-4 border-background" />
+                          <span className="font-mono text-xs text-accent">{role.period}</span>
+                          <h4 className="font-display text-lg font-bold mt-1">{role.title}</h4>
+                          <p className="text-muted text-sm mt-1">{role.desc}</p>
+                        </div>
+                      </AnimatedSection>
+                    ))}
+                  </div>
                 </div>
               </AnimatedSection>
             ))}
