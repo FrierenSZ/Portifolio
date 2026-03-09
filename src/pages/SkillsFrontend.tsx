@@ -7,6 +7,7 @@ import CustomCursor from "../components/CustomCursor";
 import AnimatedSection from "../components/AnimatedSection";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const skills = [
   { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
@@ -17,7 +18,7 @@ const skills = [
   { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
 ];
 
-function SkillCard({ skill, index }: { skill: { name: string; icon?: string; emoji?: string }; index: number }) {
+function SkillCard({ skill, index }: { skill: { name: string; icon?: string; emoji?: string; localIcon?: string }; index: number }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-30px" });
   return (
@@ -63,8 +64,8 @@ export default function SkillsFrontend() {
             ))}
           </div>
           <AnimatedSection className="flex justify-center gap-4 mt-16">
-            <a href="/" className="px-6 py-3 rounded-full border border-foreground/10 text-muted hover:text-foreground hover:border-foreground/30 transition-all text-sm font-mono">← Voltar</a>
-            <a href="/skills/backend" className="px-6 py-3 rounded-full bg-accent/10 border border-accent/30 text-accent hover:bg-accent/20 transition-all text-sm font-mono">Backend & Ferramentas →</a>
+            <Link to="/" className="px-6 py-3 rounded-full border border-foreground/10 text-muted hover:text-foreground hover:border-foreground/30 transition-all text-sm font-mono">← Voltar</Link>
+            <Link to="/skills/backend" className="px-6 py-3 rounded-full bg-accent/10 border border-accent/30 text-accent hover:bg-accent/20 transition-all text-sm font-mono">Backend & Ferramentas →</Link>
           </AnimatedSection>
         </div>
       </section>

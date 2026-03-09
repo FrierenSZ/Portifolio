@@ -1,3 +1,4 @@
+import mcpLogo from "@/assets/mcp-logo.png";
 import mondayLogo from "@/assets/monday-logo.png";
 import Navbar from "../components/Navbar";
 import MouseGlow from "../components/MouseGlow";
@@ -7,6 +8,7 @@ import CustomCursor from "../components/CustomCursor";
 import AnimatedSection from "../components/AnimatedSection";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const skills = [
   { name: "n8n", icon: "https://n8n.io/favicon.ico" },
@@ -64,8 +66,8 @@ export default function SkillsAutomacao() {
             ))}
           </div>
           <AnimatedSection className="flex justify-center gap-4 mt-16">
-            <a href="/skills/backend" className="px-6 py-3 rounded-full border border-foreground/10 text-muted hover:text-foreground hover:border-foreground/30 transition-all text-sm font-mono">← Backend</a>
-            <a href="/" className="px-6 py-3 rounded-full bg-accent/10 border border-accent/30 text-accent hover:bg-accent/20 transition-all text-sm font-mono">← Voltar ao portfólio</a>
+            <Link to="/skills/backend" className="px-6 py-3 rounded-full border border-foreground/10 text-muted hover:text-foreground hover:border-foreground/30 transition-all text-sm font-mono">← Backend</Link>
+            <Link to="/" className="px-6 py-3 rounded-full bg-accent/10 border border-accent/30 text-accent hover:bg-accent/20 transition-all text-sm font-mono">← Voltar ao portfólio</Link>
           </AnimatedSection>
         </div>
       </section>
