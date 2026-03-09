@@ -1,25 +1,35 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 
 const navItems = [
-  { href: "#home", label: "Início" },
-  { href: "#about", label: "Sobre" },
-  { href: "#services", label: "Serviços" },
-  { href: "#projects", label: "Projetos" },
-  { href: "#skills", label: "Skills" },
-  { href: "#education", label: "Educação" },
-  { href: "#contact", label: "Contato" },
+  { href: "/#home", label: "Início" },
+  { href: "/#about", label: "Sobre" },
+  { href: "/#services", label: "Serviços" },
+  { href: "/#projects", label: "Projetos" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/#education", label: "Educação" },
+  { href: "/#contact", label: "Contato" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const handleNavClick = (href: string) => {
+    setMobileOpen(false);
+    // If we're on a subpage and clicking an anchor link, navigate to home first
+    if (location.pathname !== "/" && href.startsWith("/#")) {
+      window.location.href = href;
+    }
+  };
 
   return (
     <motion.header
@@ -31,15 +41,16 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#home" className="font-display text-2xl font-bold">
+        <Link to="/" className="font-display text-2xl font-bold">
           G<span className="text-accent">.</span>
-        </a>
+        </Link>
 
         <nav className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
+              onClick={() => handleNavClick(item.href)}
               className="px-4 py-2 text-sm text-muted hover:text-foreground font-medium rounded-lg hover:bg-foreground/5 transition-all duration-200"
             >
               {item.label}
@@ -70,7 +81,7 @@ export default function Navbar() {
                 <a
                   key={item.href}
                   href={item.href}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={() => handleNavClick(item.href)}
                   className="px-4 py-3 text-base text-muted hover:text-foreground font-medium rounded-lg hover:bg-foreground/5 transition-all"
                 >
                   {item.label}
